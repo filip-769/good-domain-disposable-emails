@@ -13,7 +13,7 @@ const response = await fetch("https://raw.githubusercontent.com/filip-769/good-d
 const text = await response.text();
 const list = text.split("\n").map(line => line.trim()).filter(Boolean).filter(line => !line.startsWith("#"));
 
-const is_disposable = list.includes(email.toLowerCase().replace(/(\.(?=.*@))|(\+.*(?=@))/g, "").replace("@googlemail.com", "@gmail.com"));
+const is_disposable = list.includes(email.toLowerCase().replace("@googlemail.com", "@gmail.com").replace(/(\.(?=.*@gmail\.com))|(\+.*(?=@))/g, ""));
 ```
 
 ## Contributing
